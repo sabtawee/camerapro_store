@@ -60,6 +60,47 @@
           echo '</script>';
         }
     }
+    if (isset($_POST['create_number'])) {
+        $location = $_POST['location'];
+        $div = $_POST['div'];
+        $type = $_POST['type'];
+        $number = $_POST['number'];
+        $name = $_POST['name'];
+        $gennum = $div."-".$type."-".$number;
+        $FactoryDiv = $location.$div;
+        $checkNumber = $data->checkNumber($number);  
+        $checknum = mysqli_num_rows($checkNumber);
+ 
+        if($checknum == 0){
+            $sql = $data->addNumber($gennum, $type, $number, $location, $div, $name);
+            $addStore = $data->addStoreNumber($gennum, $location, $div, $FactoryDiv, $name);
+            echo '<script>';
+            echo "Swal.fire({
+                  position: 'center',
+                  icon: 'success',
+                  title: 'บันทึกเข้าสู่ระบบ',
+                  text: 'Number : $gennum',
+                  }).then(function() {
+                  window.location = '../hb_store_num'
+                  });";
+            echo '</script>';
+        }else{
+            echo '<script>';
+            echo "Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'โปรดตรวจสอบ'
+                }).then(function() {
+                    window.history.back();
+                });";
+            echo '</script>';
+        }
+
+    }
+
+
+
+
 
     if (isset($_POST['addimage'])) {
         $file_name = $_FILES['image']['name'];

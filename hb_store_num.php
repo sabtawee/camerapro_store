@@ -8,9 +8,17 @@
 include_once('functions/functions.php');
 $data = new DB_con();
 $num = $data->getNumber();
-while($row = mysqli_fetch_array($num)){
-    $number = $row['number'];   
+$numrow = mysqli_num_rows($num);
+if ($numrow == 0){
+    $number = 0;
+}else{
+    while($row = mysqli_fetch_array($num)){
+        $number = $row['number'];
+    }
 }
+
+$count = $number + 1;
+$count = sprintf('%03d',$count);
 ?>
 
 <div class="content-wrapper">
@@ -19,7 +27,7 @@ while($row = mysqli_fetch_array($num)){
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">HB Camera Store <?php echo $number; ?></h1>
+                        <h1 class="m-0 text-dark">HB Camera Store <?php echo $count;  ?></h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
 
@@ -59,9 +67,15 @@ while($row = mysqli_fetch_array($num)){
                 <div class="card-header">
                     <h3 class="card-title">Create Number</h3>
                 </div>
-                <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="cJwMm06FMOt8HsIg1Jviz2tNseBMZjhflYH9KglU">
+                <form class="form-horizontal" method="POST" action="functions/api">
                     <div class="card-body">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Location</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="location" placeholder="Division" value="LPB"
+                                    required autocomplete="location" required>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Division</label>
                             <div class="col-sm-10">
@@ -70,29 +84,29 @@ while($row = mysqli_fetch_array($num)){
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Sub Process</label>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Process</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="Sub Process" name="subprocess"
-                                    autofocus autocomplete="subprocess" required>
+                                <input type="text" class="form-control" maxlength="2" placeholder="Process" name="type"
+                                    autofocus autocomplete="type" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Drawing No</label>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Number</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="ลำดับ Number ล่าสุด" value="A256"
-                                    name="dwgno">
+                                <input type="text" class="form-control" placeholder="ลำดับ Number ล่าสุด" value="<?php echo $count;  ?>"
+                                    name="number" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Create By</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="Create By" value="T3210"
-                                    name="updateby">
+                                <input type="text" class="form-control" placeholder="Name"
+                                    name="name" required>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" name="create_number" class="btn btn-success">Submit</button>
                         <button type="reset" class="btn btn-danger float-right">Cancel</button>
                     </div>
                 </form>

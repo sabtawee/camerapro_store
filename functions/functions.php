@@ -41,7 +41,33 @@ class DB_con
 
     public function getNumber()
     {
-        $result = mysqli_query($this->dbcon, "SELECT number FROM hb_store_log ORDER BY number DESC");
+        $result = mysqli_query($this->dbcon, "SELECT number FROM hb_store_log ORDER BY number DESC LIMIT 1");
+        return $result;
+    }
+
+    public function addNumber($gennum, $type, $number, $location, $div, $name)
+    {
+        $result = mysqli_query($this->dbcon, "INSERT INTO hb_store_log (`gennum`, `type`, `number`, `location`, `div`, `name`) 
+        VALUES ('$gennum', '$type', '$number', '$location', '$div', '$name')");
+        return $result;
+    }
+    public function addStoreNumber($gennum, $location, $div, $FactoryDiv, $name){
+        $result = mysqli_query($this->dbcon, "INSERT INTO hb_store (`Number`, `Location`, `Div`, `FactryDiv`, `name`)
+        VALUES ('$gennum', '$location', '$div', '$FactoryDiv', '$name')");
+        return $result; 
+    }
+    public function checkNumber($number)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT number FROM hb_store_log WHERE number = '$number'");
+        return $result;
+    }
+    public function getFilenull(){
+        $result = mysqli_query($this->dbcon, "SELECT * FROM hb_store WHERE file = '0'");
+        return $result;
+    }
+    public function getStorehbById($id)
+    {
+        $result = mysqli_query($this->dbcon, "SELECT * FROM hb_store WHERE id = '$id'");
         return $result;
     }
 

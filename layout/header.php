@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv=Content-Type content="text/html; charset=utf-8">
     <link rel="icon" href="favicon.ico">
-    <title>CCI</title>
+    <title>Camera Store</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"

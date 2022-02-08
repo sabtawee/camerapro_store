@@ -46,7 +46,7 @@
                     <div class="small-box bg-pink">
 
                         <div class="inner">
-                            <a href="">
+                            <a href="hb_store_file">
                                 <h4 class="text-white">UPLOAD NEW !!</h4>
 
                                 <p class="text-white">อัพโหลด Drawing ใหม่</p>
@@ -54,7 +54,7 @@
                         <div class="icon">
                             <i class="fas fa-file-upload"></i>
                         </div>
-                        <a href="" class="small-box-footer">Go To <i
+                        <a href="hb_store_file" class="small-box-footer">Go To <i
                                 class="fas fa-arrow-circle-right"></i></a>
                         </a>
                     </div>

@@ -16,7 +16,7 @@
                  data-accordion="false">
                  <li class="nav-header">Store</li>
                  <li class="nav-item">
-                     <a href="" class="nav-link">
+                     <a href="hb_store" class="nav-link">
                          <i class="nav-icon fas fa-drafting-compass text-fuchsia"></i>
                          <p>
                              LPB-HB
