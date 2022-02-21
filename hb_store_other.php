@@ -33,7 +33,7 @@
         <div class="col-12">
             <div class="card card-green">
                 <div class="card-header">
-                    <h3 class="card-title">Create File</h3>
+                    <h3 class="card-title">Other File</h3>
                 </div>
                 <form class="form-horizontal" method="POST" action="functions/api.php?id=<?php echo $id ?>" enctype="multipart/form-data">
                     <div class="card-body">
@@ -67,81 +67,81 @@
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Line</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="line" placeholder="Line" autofocus required>
+                                <input type="text" class="form-control" name="line" placeholder="Line" value="<?php echo $row['line']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Process</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="process" placeholder="Process" required>
+                                <input type="text" class="form-control" name="process" placeholder="Process" value="<?php echo $row['process']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Purpose</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="purpose" placeholder="Purpose(angle,position,color, length, etc)" required>
+                                <input type="text" class="form-control" name="purpose" placeholder="Purpose(angle,position,color, length, etc)"  value="<?php echo $row['purpose']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">flowout from Camera</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="ffci" placeholder="If flowout from Camera inspection" required>
+                                <input type="text" class="form-control" name="ffci" placeholder="If flowout from Camera inspection" value="<?php echo $row['ffci']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Equipment verification</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="ev" placeholder="Equipment verification" required>
+                                <input type="text" class="form-control" name="ev" placeholder="Equipment verification" value="<?php echo $row['ev']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Judgement</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="jugement" placeholder="OK/NG Judgement by master " required>
+                                <input type="text" class="form-control" name="jugement" placeholder="OK/NG Judgement by master" value="<?php echo $row['jugement']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label"> Actual Master</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="actualmaster" placeholder="OK/NG Actual master value record" value=""
+                                <input type="text" class="form-control" name="actualmaster" placeholder="OK/NG Actual master value record" value="<?php echo $row['actualmaster']; ?>"
                                     required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Using Master</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="using_master" placeholder="Using master by product or Jig（gauge）" value=""
+                                <input type="text" class="form-control" name="using_master" placeholder="Using master by product or Jig (gauge)" value="<?php echo $row['using_master']; ?>"
                                     required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">No confirmation</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="cf" placeholder="No confirmation" required>
+                                <input type="text" class="form-control" name="cf" placeholder="No confirmation"  value="<?php echo $row['cf']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Use/Unuse</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="status" placeholder="Use/Unuse" required>
+                                <input type="text" class="form-control" name="status" placeholder="Use/Unuse"  value="<?php echo $row['status']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Maker</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="maker" placeholder="Maker" required>
+                                <input type="text" class="form-control" name="maker" placeholder="Maker"  value="<?php echo $row['maker']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Camera Type</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="camera_type" placeholder="Camera Type" required>
+                                <input type="text" class="form-control" name="camera_type" placeholder="Camera Type"  value="<?php echo $row['camera_type']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Controller Type</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="controler_type" placeholder="Controler Type" required>
+                                <input type="text" class="form-control" name="controler_type" placeholder="Use/Unuse"  value="<?php echo $row['controler_type']; ?>" required>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">File Upload</label>
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">File Other Upload</label>
                             <div class="col-sm-10">
                                 <div class="custom-file">
                                     <input type="file" name="file" class="custom-file-input" id="exampleInputFile" required>
@@ -161,7 +161,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" name="uplod_hbstore" class="btn btn-success">Submit</button>
+                        <button type="submit" name="other_hbstore" class="btn btn-success">Submit</button>
                         <button type="reset" class="btn btn-danger float-right">Cancel</button>
                     </div>
                 </form>

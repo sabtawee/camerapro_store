@@ -5,7 +5,7 @@
 <?php include 'layout/menu.php'?>
 
 <?php 
-include_once('functions/functions.php');
+include_once('functions/functions_pm.php');
 $data = new DB_con();
 $num = $data->getNumber();
 $numrow = mysqli_num_rows($num);
@@ -27,7 +27,7 @@ $count = sprintf('%03d',$count);
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">HB Camera Store <?php echo $count;  ?></h1>
+                        <h1 class="m-0 text-dark">PM Camera Store <?php echo $count;  ?></h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
 
@@ -67,7 +67,7 @@ $count = sprintf('%03d',$count);
                 <div class="card-header">
                     <h3 class="card-title">Create Number</h3>
                 </div>
-                <form class="form-horizontal" method="POST" action="functions/api">
+                <form class="form-horizontal" method="POST" action="functions/api_pm">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Location</label>
@@ -79,7 +79,7 @@ $count = sprintf('%03d',$count);
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Division</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="div" placeholder="Division" value="HB"
+                                <input type="text" class="form-control" name="div" placeholder="Division" value="PM"
                                     required autocomplete="div">
                             </div>
                         </div>

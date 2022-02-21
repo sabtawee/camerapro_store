@@ -14,14 +14,32 @@
          <nav class="mt-2">
              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                  data-accordion="false">
-                 <li class="nav-header">Store</li>
+                 <li class="nav-header">Store HB</li>
                  <li class="nav-item">
                      <a href="hb_store" class="nav-link">
                          <i class="nav-icon fas fa-drafting-compass text-fuchsia"></i>
                          <p>
                              LPB-HB
                          </p>
-                     </a>
+                     </a>                  
+                 </li>
+                 <li class="nav-header">Store PM</li>
+                 <li class="nav-item">
+                     <a href="pm_store" class="nav-link">
+                         <i class="nav-icon fas fa-drafting-compass text-success"></i>
+                         <p>
+                             LPB-PM
+                         </p>
+                     </a>                  
+                 </li>
+                 <li class="nav-header">Store MA</li>
+                 <li class="nav-item">
+                     <a href="ma_store" class="nav-link">
+                         <i class="nav-icon fas fa-drafting-compass text-danger"></i>
+                         <p>
+                             LPB-MA
+                         </p>
+                     </a>                  
                  </li>
              </ul>
          </nav>

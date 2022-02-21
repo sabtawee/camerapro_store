@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <?php 
-         include_once('functions.php'); 
+         include_once('functions_pm.php'); 
          $data = new DB_con();
 
     if (isset($_POST['login'])) {
@@ -81,7 +81,7 @@
                   title: 'บันทึกเข้าสู่ระบบ',
                   text: 'Number : $gennum',
                   }).then(function() {
-                  window.location = '../hb_store_num'
+                  window.location = '../pm_store_num'
                   });";
             echo '</script>';
         }else{
@@ -121,7 +121,7 @@
         $type = "Camera Program";
         $file_name = $_FILES['file']['name'];
         $file_tmp =$_FILES['file']['tmp_name'];
-        $file = "upload/hb_store/cameraProgram/".$file_name;
+        $file = "upload/pm_store/cameraProgram/".$file_name;
         if ($file_name == '') {
             echo '<script>';
             echo "Swal.fire({
@@ -138,7 +138,7 @@
             $actualmaster, $using_master, $cf, 
             $status, $file, $maker,
             $camera_type, $controler_type, $name, $type);
-            move_uploaded_file($file_tmp,"../upload/hb_store/cameraProgram/".$file_name);
+            move_uploaded_file($file_tmp,"../upload/pm_store/cameraProgram/".$file_name);
             echo '<script>';
             echo "Swal.fire({
                 position: 'center',
@@ -146,7 +146,7 @@
                 title: 'Upload Success',
                 text: '$number'
                 }).then(function() {
-                window.location = '../hb_store';
+                window.location = '../pm_store';
                 });";
             echo '</script>';
         }
@@ -175,7 +175,7 @@
         $type = "Revise Program";
         $file_name = $_FILES['file']['name'];
         $file_tmp =$_FILES['file']['tmp_name'];
-        $file = "upload/hb_store/cameraProgram/".$file_name;
+        $file = "upload/pm_store/cameraProgram/".$file_name;
         if ($file_name == '') {
             echo '<script>';
             echo "Swal.fire({
@@ -192,7 +192,7 @@
             $actualmaster, $using_master, $cf, 
             $status, $file, $maker,
             $camera_type, $controler_type, $name, $type);
-            move_uploaded_file($file_tmp,"../upload/hb_store/cameraProgram/".$file_name);
+            move_uploaded_file($file_tmp,"../upload/pm_store/cameraProgram/".$file_name);
             echo '<script>';
             echo "Swal.fire({
                 position: 'center',
@@ -200,7 +200,7 @@
                 title: 'Revise Success',
                 text: '$number'
                 }).then(function() {
-                window.location = '../hb_store';
+                window.location = '../pm_store';
                 });";
             echo '</script>';
         }
@@ -228,7 +228,7 @@
         $type = "Evaluation Data";
         $file_name = $_FILES['file']['name'];
         $file_tmp =$_FILES['file']['tmp_name'];
-        $file = "upload/hb_store/evaluationData/".$file_name;
+        $file = "upload/pm_store/evaluationData/".$file_name;
         if ($file_name == '') {
             echo '<script>';
             echo "Swal.fire({
@@ -245,7 +245,7 @@
             $actualmaster, $using_master, $cf, 
             $status, $file, $maker,
             $camera_type, $controler_type, $name, $type);
-            move_uploaded_file($file_tmp,"../upload/hb_store/evaluationData/".$file_name);
+            move_uploaded_file($file_tmp,"../upload/pm_store/evaluationData/".$file_name);
             echo '<script>';
             echo "Swal.fire({
                 position: 'center',
@@ -253,7 +253,7 @@
                 title: 'Evaluation Success',
                 text: '$number'
                 }).then(function() {
-                window.location = '../hb_store';
+                window.location = '../pm_store';
                 });";
             echo '</script>';
         }
@@ -282,7 +282,7 @@
         $type = "Other";
         $file_name = $_FILES['file']['name'];
         $file_tmp =$_FILES['file']['tmp_name'];
-        $file = "upload/hb_store/other/".$file_name;
+        $file = "upload/pm_store/other/".$file_name;
         if ($file_name == '') {
             echo '<script>';
             echo "Swal.fire({
@@ -299,7 +299,7 @@
             $actualmaster, $using_master, $cf, 
             $status, $file, $maker,
             $camera_type, $controler_type, $name, $type);
-            move_uploaded_file($file_tmp,"../upload/hb_store/other/".$file_name);
+            move_uploaded_file($file_tmp,"../upload/pm_store/other/".$file_name);
             echo '<script>';
             echo "Swal.fire({
                 position: 'center',
@@ -307,7 +307,7 @@
                 title: 'Other Upload Success',
                 text: '$number'
                 }).then(function() {
-                window.location = '../hb_store';
+                window.location = '../pm_store';
                 });";
             echo '</script>';
         }

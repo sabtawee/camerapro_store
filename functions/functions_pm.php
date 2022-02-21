@@ -42,33 +42,33 @@ class DB_con
 
     public function getNumber()
     {
-        $result = mysqli_query($this->dbcon, "SELECT number FROM hb_store_log ORDER BY number DESC LIMIT 1");
+        $result = mysqli_query($this->dbcon, "SELECT number FROM pm_store_log ORDER BY number DESC LIMIT 1");
         return $result;
     }
 
     public function addNumber($gennum, $type, $number, $location, $div, $name)
     {
-        $result = mysqli_query($this->dbcon, "INSERT INTO hb_store_log (`gennum`, `type`, `number`, `location`, `div`, `name`) 
+        $result = mysqli_query($this->dbcon, "INSERT INTO pm_store_log (`gennum`, `type`, `number`, `location`, `div`, `name`) 
         VALUES ('$gennum', '$type', '$number', '$location', '$div', '$name')");
         return $result;
     }
     public function addStoreNumber($gennum, $location, $div, $FactoryDiv, $name){
-        $result = mysqli_query($this->dbcon, "INSERT INTO hb_store (`Number`, `Location`, `Div`, `FactryDiv`, `name`)
+        $result = mysqli_query($this->dbcon, "INSERT INTO pm_store (`Number`, `Location`, `Div`, `FactryDiv`, `name`)
         VALUES ('$gennum', '$location', '$div', '$FactoryDiv', '$name')");
         return $result; 
     }
     public function checkNumber($number)
     {
-        $result = mysqli_query($this->dbcon, "SELECT number FROM hb_store_log WHERE number = '$number'");
+        $result = mysqli_query($this->dbcon, "SELECT number FROM pm_store_log WHERE number = '$number'");
         return $result;
     }
     public function getFilenull(){
-        $result = mysqli_query($this->dbcon, "SELECT * FROM hb_store WHERE file = '0'");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM pm_store WHERE file = '0'");
         return $result;
     }
     public function getStorehbById($id)
     {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM hb_store WHERE id = '$id'");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM pm_store WHERE id = '$id'");
         return $result;
     }
 
@@ -79,7 +79,7 @@ class DB_con
     $status, $file, $maker,
     $camera_type, $controler_type, $name, $type)
     {
-        $result = mysqli_query($this->dbcon, "UPDATE hb_store 
+        $result = mysqli_query($this->dbcon, "UPDATE pm_store 
         SET 
         `Number` = '$number', 
         `Location` = '$location', 
@@ -108,12 +108,12 @@ class DB_con
 
     public function getCameraHbAll()
     {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM hb_store WHERE file != '0' group by Number");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM pm_store WHERE file != '0' group by Number");
         return $result;
     }
     public function getCameraHbByNumber($number)
     {
-        $result = mysqli_query($this->dbcon, "SELECT * FROM hb_store WHERE Number = '$number'");
+        $result = mysqli_query($this->dbcon, "SELECT * FROM pm_store WHERE Number = '$number'");
         return $result;
     }
 
@@ -130,7 +130,7 @@ class DB_con
     $status, $file, $maker,
     $camera_type, $controler_type, $name, $type)
     {
-        $result = mysqli_query($this->dbcon, "INSERT INTO hb_store (`Number`, `Location`, `Div`, `FactryDiv`, `line`, `process`, `purpose`, `ffci`, `ev`, `jugement`, `actualmaster`, `using_master`, `cf`, `status`, `file`, `name`, `maker`, `camera_type`, `controler_type`, `type`) 
+        $result = mysqli_query($this->dbcon, "INSERT INTO pm_store (`Number`, `Location`, `Div`, `FactryDiv`, `line`, `process`, `purpose`, `ffci`, `ev`, `jugement`, `actualmaster`, `using_master`, `cf`, `status`, `file`, `name`, `maker`, `camera_type`, `controler_type`, `type`) 
         VALUES ('$number', 
         '$location', '$div', '$factryDiv', '$line', 
         '$process', '$purpose', '$ffci', '$ev', '$jugement', 

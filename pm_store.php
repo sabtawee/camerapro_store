@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">HB Camera Store</h1>
+                        <h1 class="m-0 text-dark">PM Camera Store</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
 
@@ -28,7 +28,7 @@
                     <div class="small-box bg-success">
 
                         <div class="inner">
-                            <a href="hb_store_num">
+                            <a href="pm_store_num">
                                 <h4 class="text-white">CREATE NUMBER</h4>
 
                                 <p class="text-white">จองเลข นัมเบอร์ ของท่าน</p>
@@ -36,7 +36,7 @@
                         <div class="icon">
                             <i class="fas fa-sort-numeric-up-alt"></i>
                         </div>
-                        <a href="hb_store_num" class="small-box-footer">Go To <i
+                        <a href="pm_store_num" class="small-box-footer">Go To <i
                                 class="fas fa-arrow-circle-right"></i></a>
                         </a>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="small-box bg-pink">
 
                         <div class="inner">
-                            <a href="hb_store_file">
+                            <a href="pm_store_file">
                                 <h4 class="text-white">UPLOAD FILE NEW !!</h4>
 
                                 <p class="text-white">อัพโหลด ไฟล์ ใหม่</p>
@@ -54,7 +54,7 @@
                         <div class="icon">
                             <i class="fas fa-file-upload"></i>
                         </div>
-                        <a href="hb_store_file" class="small-box-footer">Go To <i
+                        <a href="pm_store_file" class="small-box-footer">Go To <i
                                 class="fas fa-arrow-circle-right"></i></a>
                         </a>
                     </div>
@@ -64,7 +64,7 @@
                     <div class="small-box bg-warning">
 
                         <div class="inner">
-                            <a href="hb_store_revise">
+                            <a href="pm_store_revise">
                                 <h4 class="text-white">ADD & REVISE !!</h4>
 
                                 <p class="text-white">Add Evaluation & Other File</p>
@@ -72,7 +72,7 @@
                         <div class="icon">
                             <i class="fas fa-edit"></i>
                         </div>
-                        <a href="hb_store_revise" class="small-box-footer">Go To <i
+                        <a href="pm_store_revise" class="small-box-footer">Go To <i
                                 class="fas fa-arrow-circle-right text-white"></i></a>
                         </a>
                     </div>
@@ -106,7 +106,7 @@
                         </thead>
                         <tbody>
                         <?php                 
-                        include_once('functions/functions.php');
+                        include_once('functions/functions_pm.php');
                         $data = new DB_con();
                         $sql = $data->getCameraHbAll();
                         while($row = mysqli_fetch_array($sql)) {   
@@ -138,7 +138,7 @@
                                     <?php echo $row['controler_type']; ?>
                                 </td>
                                 <td class="text-center">
-                                <a href="viewDetail.php?Number=<?php echo $row['Number'] ?>" rel="noopener"
+                                <a href="viewDetail_pm.php?Number=<?php echo $row['Number'] ?>" rel="noopener"
                                         class="btn btn-primary"><i class="fas fa-view"></i> View Detail</a>                                  
                                 </td>
                             </tr>

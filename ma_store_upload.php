@@ -12,7 +12,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">HB Camera Store</h1>
+                        <h1 class="m-0 text-dark">MA Camera Store</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
 
@@ -24,7 +24,7 @@
 
     <section>
         <?php 
-        include_once('functions/functions.php');
+        include_once('functions/functions_ma.php');
         $id = $_GET['id'];
         $data = new DB_con();
         $sql = $data->getStorehbById($id);
@@ -35,7 +35,7 @@
                 <div class="card-header">
                     <h3 class="card-title">Create File</h3>
                 </div>
-                <form class="form-horizontal" method="POST" action="functions/api.php?id=<?php echo $id ?>" enctype="multipart/form-data">
+                <form class="form-horizontal" method="POST" action="functions/api_ma.php?id=<?php echo $id ?>" enctype="multipart/form-data">
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-2 col-form-label">Number</label>

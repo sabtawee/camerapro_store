@@ -11,7 +11,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">HB Camera Store</h1>
+                        <h1 class="m-0 text-dark">PM Camera Store</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
 
@@ -39,7 +39,7 @@
                         </thead>
                         <tbody>
                             <?php                 
-                        include_once('functions/functions.php');
+                        include_once('functions/functions_pm.php');
                         $i = 1;
                         $data = new DB_con();
                         $sql = $data->getFilenull();
@@ -57,7 +57,7 @@
                                 </td>
 
                                 <td class="project-actions text-center">
-                                    <a href="hb_store_upload.php?id=<?php echo $row['id'] ?>" rel="noopener"
+                                    <a href="pm_store_upload.php?id=<?php echo $row['id'] ?>" rel="noopener"
                                         class="btn btn-primary"><i class="fas fa-upload"></i> UPLOAD FILE</a>
                                 </td>
                             </tr>
